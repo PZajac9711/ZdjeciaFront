@@ -1,0 +1,10 @@
+.container{
+  padding: 5px;
+  max-width: 650px;
+}
+.container > * {
+  color:#FFF;
+}
+.image-holder{
+  background-color: #343a40;
+}

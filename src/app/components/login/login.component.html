@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="rounded" id="login-container">
+    <form [formGroup]="form" (ngSubmit)="logIn() ">
+      <input type="text" id="login" class="fadeIn second" name="login" placeholder="login" formControlName="login">
+      <input type="password" id="password" class="fadeIn third" name="login" placeholder="password" formControlName="password">
+      <input type="submit" class="fadeIn fourth" value="Log In">
+      {{token$}}
+    </form>
+    <div id="formFooter">
+      <a class="underlineHover" href="#">Zarejestruj się!</a>
+    </div>
+  </div>
+</div>
+
