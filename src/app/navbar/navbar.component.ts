@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {NextComponent} from '../components/next/next.component';
 
 @Component({
   selector: 'app-navbar',
@@ -12,4 +13,7 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  reset(){
+    NextComponent.number = 0;
+  }
 }

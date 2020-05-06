@@ -1,15 +1,15 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-dark">
   <div class="col-8">
-    <a class="navbar-brand" [routerLink]="['/']"><i class="fa fa-weibo" aria-hidden="true"></i></a>
+    <a class="navbar-brand" [routerLink]="['/']" (click)="reset()"><i class="fa fa-weibo" aria-hidden="true"></i></a>
     <span class="navbar-text">Memo</span>
   </div>
   <div class="col-4">
     <ul class="navbar-nav pull-right">
       <li class="nav-item">
-        <a class="nav-link">Link 2</a>
+        <a class="nav-link" [routerLink]="['/random']">Random</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link">Link 3</a>
+        <a class="nav-link" [routerLink]="['/page/2']">Link 3</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" [routerLink]="['/login']">Zaloguj się</a>

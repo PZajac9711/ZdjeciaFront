@@ -14,4 +14,6 @@ export class ImageDisplayComponent implements OnInit {
   }
 
   @Input() name: string;
+  @Input() title: string;
+  @Input() score: number;
 }
