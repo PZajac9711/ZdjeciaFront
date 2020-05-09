@@ -1,4 +1,7 @@
-import {Component, OnInit, Input} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {ScoreService} from '../../services/score.service';
+
+// Jeśli ktoś to czyta niech wie ,że słabo mi było jak wyciągałem tego hedera :(
 
 @Component({
   selector: 'app-image-display',
@@ -7,7 +10,7 @@ import {Component, OnInit, Input} from '@angular/core';
 })
 export class ImageDisplayComponent implements OnInit {
 
-  constructor() {
+  constructor(private service: ScoreService) {
   }
 
   ngOnInit(): void {
@@ -16,4 +19,10 @@ export class ImageDisplayComponent implements OnInit {
   @Input() name: string;
   @Input() title: string;
   @Input() score: number;
+
+  setScore() {
+    this.service.scoreImage(this.name).subscribe(resp => {
+      this.score = Number(resp.headers.get('actualScore'));
+    });
+  }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
 import {RegisterService} from '../../services/register.service';
 
@@ -9,16 +9,20 @@ import {RegisterService} from '../../services/register.service';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor(private service: RegisterService) { }
+  constructor(private service: RegisterService) {
+  }
+
   form = new FormGroup({
     login: new FormControl(''),
     password: new FormControl('')
   });
+
   ngOnInit(): void {
   }
-  register(){
+
+  register() {
     this.service.register(this.form.get('login').value, this.form.get('password').value).subscribe(response => {
-      console.log("Zarejestowanoa!");
+      console.log('Zarejestrowano!');
       window.location.reload();
     });
   }
