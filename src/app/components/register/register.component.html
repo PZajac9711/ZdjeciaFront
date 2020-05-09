@@ -1,0 +1,14 @@
+<div class="container" style="margin-top: 25px">
+  <h1 style="text-align: center;color: #FFF">Zarejestruj się</h1>
+  <div class="rounded"
+    style="width: 270px;margin-left: auto; margin-right: auto;color: #FFF;background-color: #343a40;padding: 15px">
+    <form [formGroup]="form" (ngSubmit)="register()">
+      <label for="login">Login</label>
+      <input type="text" id="login" class="form-control" name="login" placeholder="login" formControlName="login" style="margin-bottom: 5px;">
+      <label for="password">Password</label>
+      <input type="password" id="password" class="form-control" name="login" placeholder="password"
+             formControlName="password">
+      <input type="submit" class="btn btn-primary" value="Register" style="margin:10px">
+    </form>
+  </div>
+</div>

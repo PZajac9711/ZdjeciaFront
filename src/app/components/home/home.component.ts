@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {PageImagesService} from '../../services/page-images.service';
 import {NextComponent} from '../next/next.component';
 import {NavigationEnd, Router} from '@angular/router';
+import {StorageJwtService} from '../../services/storage-jwt.service';
 
 @Component({
   selector: 'app-home',
@@ -10,7 +11,6 @@ import {NavigationEnd, Router} from '@angular/router';
 })
 export class HomeComponent implements OnInit {
   public images$: any;
-
   constructor(private pageService: PageImagesService, private router: Router) {
     this.router.routeReuseStrategy.shouldReuseRoute = () => false;
   }
@@ -30,4 +30,5 @@ export class HomeComponent implements OnInit {
       this.images$ = response;
     });
   }
+
 }

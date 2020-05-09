@@ -11,16 +11,10 @@ export class RandomService {
   URL = 'http://localhost:8080/random';
 
 
-  constructor(private http: HttpClient, private jwt: StorageJwtService) {
+  constructor(private http: HttpClient) {
   }
 
   getRandomPicture(): Observable<IImage> {
-    console.log(this.jwt.getJwt());
-    let headers = new HttpHeaders();
-    headers.append('authorization', 'esssssa');
-    headers.append('Access-Control-Allow-Origin', '*');
-
-    let options = {headers: headers};
-    return this.http.get<IImage>(this.URL, options);
+    return this.http.get<IImage>(this.URL);
   }
 }

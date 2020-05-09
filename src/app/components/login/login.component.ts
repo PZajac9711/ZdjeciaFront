@@ -10,21 +10,35 @@ import {StorageJwtService} from '../../services/storage-jwt.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+
+  constructor(private service: LoginService, private jwtService: StorageJwtService) {
+  }
+
+  static logged = false;
   token: string;
   form = new FormGroup({
     login: new FormControl(''),
     password: new FormControl('')
   });
 
-  constructor(private service: LoginService, private jwtService: StorageJwtService) {
-  }
-
   ngOnInit(): void {
+    this.checkLogged();
   }
 
   logIn() {
     this.service.getToken(this.form.get('login').value, this.form.get('password').value).subscribe(response => {
       this.jwtService.saveJwt(response.token);
+      window.location.reload();
     });
+  }
+
+  checkLogged() {
+    if (this.jwtService.getJwt() !== null) {
+      LoginComponent.logged = true;
+    }
+  }
+
+  getStatic() {
+    return LoginComponent.logged;
   }
 }

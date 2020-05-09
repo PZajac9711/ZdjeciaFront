@@ -16,6 +16,7 @@ import {PageImagesService} from './services/page-images.service';
 import { NextComponent } from './components/next/next.component';
 import { RandomComponent } from './components/random/random.component';
 import {InterceptorService} from './services/interceptor.service';
+import { RegisterComponent } from './components/register/register.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import {InterceptorService} from './services/interceptor.service';
     NavbarComponent,
     ImageDisplayComponent,
     NextComponent,
-    RandomComponent
+    RandomComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

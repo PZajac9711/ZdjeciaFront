@@ -13,6 +13,7 @@ export class RandomComponent implements OnInit {
   name: string;
   title: string;
   points: number;
+  logged = false;
   ngOnInit(): void {
     this.getRandomImage();
   }
@@ -22,6 +23,7 @@ export class RandomComponent implements OnInit {
       this.name = response.name;
       this.title = response.title;
       this.points = response.points;
+      this.logged = true;
     });
   }
 }
